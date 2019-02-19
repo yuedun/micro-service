@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/russross/blackfriday"
 	"github.com/microcosm-cc/bluemonday"
+	"github.com/russross/blackfriday"
 )
 
 func main() {
