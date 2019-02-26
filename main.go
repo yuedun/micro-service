@@ -1,16 +1,35 @@
 package main
 
 import (
-	"fmt"
-	"github.com/microcosm-cc/bluemonday"
-	"github.com/russross/blackfriday"
+	"github.com/micro/go-log"
+	"github.com/micro/go-micro"
+	"micro-service/handler"
+	"micro-service/subscriber"
+
+	example "micro-service/proto/example"
 )
 
 func main() {
-	//先做一个markdown转HTML的练习和go module依赖管理
-	mdstr := "# 标题一"
-	input := []byte(mdstr)
-	unsafe := blackfriday.Run(input)
-	html := bluemonday.UGCPolicy().SanitizeBytes(unsafe)
-	fmt.Println(">>>>", string(html))
+	// New Service
+	service := micro.NewService(
+		micro.Name("go.micro-service.srv.micro"),
+		micro.Version("latest"),
+	)
+
+	// Initialise service
+	service.Init()
+
+	// Register Handler
+	example.RegisterExampleHandler(service.Server(), new(handler.Example))
+
+	// Register Struct as Subscriber
+	micro.RegisterSubscriber("go.micro-service.srv.micro", service.Server(), new(subscriber.Example))
+
+	// Register Function as Subscriber
+	micro.RegisterSubscriber("go.micro-service.srv.micro", service.Server(), subscriber.Handler)
+
+	// Run service
+	if err := service.Run(); err != nil {
+		log.Fatal(err)
+	}
 }
