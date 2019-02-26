@@ -4,6 +4,7 @@ go语言微服务
 生成*.pb.go代码
 ```shell
 $ protoc protos/method.proto --go_out=plugins=grpc:.
+$ protoc --proto_path=. --micro_out=. --go_out=. proto/example/example.proto
 ```
 
 # Micro Service
@@ -60,4 +61,11 @@ Run the service
 Build a docker image
 ```
 make docker
+```
+启动服务和测试
+```shell
+go run main.go
+```
+```shell
+micro call go.micro.srv.micro-service Example.Call '{"name": "John"}'
 ```

@@ -25,7 +25,7 @@ import (
 	"time"
 
 	"google.golang.org/grpc"
-	pb "micro-service/protos"
+	pb "micro-service/proto"
 )
 
 const (

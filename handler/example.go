@@ -2,7 +2,8 @@ package handler
 
 import (
 	"context"
-
+	"github.com/microcosm-cc/bluemonday"
+	"github.com/russross/blackfriday"
 	"github.com/micro/go-log"
 
 	example "micro-service/proto/example"
@@ -45,4 +46,16 @@ func (e *Example) PingPong(ctx context.Context, stream example.Example_PingPongS
 			return err
 		}
 	}
+}
+
+// SayHello implements helloworld.GreeterServer
+func (e *Example) Md2Html(ctx context.Context, req *example.MethodRequest, res *example.MethodReply) error {
+	log.Logf("Received: %v", req.MarkdownStr)
+	//先做一个markdown转HTML的练习和go module依赖管理
+	input := []byte(req.MarkdownStr)
+	unsafe := blackfriday.Run(input)
+	htmlByte := bluemonday.UGCPolicy().SanitizeBytes(unsafe)
+	log.Logf("Reply:", string(htmlByte))
+	res.Html=string(htmlByte)//获取到的时Unicode码，蛋疼
+	return nil
 }

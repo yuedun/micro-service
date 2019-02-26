@@ -29,7 +29,7 @@ import (
 	"github.com/russross/blackfriday"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	pb "micro-service/protos"
+	pb "micro-service/proto"
 )
 
 const (

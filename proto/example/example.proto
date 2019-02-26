@@ -6,6 +6,8 @@ service Example {
 	rpc Call(Request) returns (Response) {}
 	rpc Stream(StreamingRequest) returns (stream StreamingResponse) {}
 	rpc PingPong(stream Ping) returns (stream Pong) {}
+
+	rpc Md2Html(MethodRequest) returns (MethodReply) {}
 }
 
 message Message {
@@ -34,4 +36,12 @@ message Ping {
 
 message Pong {
 	int64 stroke = 1;
+}
+
+message MethodRequest {
+  string markdownStr = 1;
+}
+
+message MethodReply {
+  string html = 1;
 }

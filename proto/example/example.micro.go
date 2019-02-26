@@ -15,6 +15,8 @@ It has these top-level messages:
 	StreamingResponse
 	Ping
 	Pong
+	MethodRequest
+	MethodReply
 */
 package go_micro_srv_micro
 
@@ -50,6 +52,7 @@ type ExampleService interface {
 	Call(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 	Stream(ctx context.Context, in *StreamingRequest, opts ...client.CallOption) (Example_StreamService, error)
 	PingPong(ctx context.Context, opts ...client.CallOption) (Example_PingPongService, error)
+	Md2Html(ctx context.Context, in *MethodRequest, opts ...client.CallOption) (*MethodReply, error)
 }
 
 type exampleService struct {
@@ -170,12 +173,23 @@ func (x *exampleServicePingPong) Recv() (*Pong, error) {
 	return m, nil
 }
 
+func (c *exampleService) Md2Html(ctx context.Context, in *MethodRequest, opts ...client.CallOption) (*MethodReply, error) {
+	req := c.c.NewRequest(c.name, "Example.Md2Html", in)
+	out := new(MethodReply)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Example service
 
 type ExampleHandler interface {
 	Call(context.Context, *Request, *Response) error
 	Stream(context.Context, *StreamingRequest, Example_StreamStream) error
 	PingPong(context.Context, Example_PingPongStream) error
+	Md2Html(context.Context, *MethodRequest, *MethodReply) error
 }
 
 func RegisterExampleHandler(s server.Server, hdlr ExampleHandler, opts ...server.HandlerOption) error {
@@ -183,6 +197,7 @@ func RegisterExampleHandler(s server.Server, hdlr ExampleHandler, opts ...server
 		Call(ctx context.Context, in *Request, out *Response) error
 		Stream(ctx context.Context, stream server.Stream) error
 		PingPong(ctx context.Context, stream server.Stream) error
+		Md2Html(ctx context.Context, in *MethodRequest, out *MethodReply) error
 	}
 	type Example struct {
 		example
@@ -272,4 +287,8 @@ func (x *examplePingPongStream) Recv() (*Ping, error) {
 		return nil, err
 	}
 	return m, nil
+}
+
+func (h *exampleHandler) Md2Html(ctx context.Context, in *MethodRequest, out *MethodReply) error {
+	return h.ExampleHandler.Md2Html(ctx, in, out)
 }
