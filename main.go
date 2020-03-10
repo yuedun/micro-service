@@ -2,17 +2,15 @@ package main
 
 import (
 	"github.com/micro/go-log"
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	"micro-service/handler"
-	"micro-service/subscriber"
-
-	example "micro-service/proto/example"
+	"micro-service/proto/user"
 )
 
 func main() {
 	// New Service
 	service := micro.NewService(
-		micro.Name("go.micro.srv.micro-service"),
+		micro.Name("user"),
 		micro.Version("latest"),
 	)
 
@@ -20,13 +18,7 @@ func main() {
 	service.Init()
 
 	// Register Handler
-	example.RegisterExampleHandler(service.Server(), new(handler.Example))
-
-	// Register Struct as Subscriber
-	micro.RegisterSubscriber("go.micro.srv.micro-service", service.Server(), new(subscriber.Example))
-
-	// Register Function as Subscriber
-	micro.RegisterSubscriber("go.micro.srv.micro-service", service.Server(), subscriber.Handler)
+	user.RegisterUserHandler(service.Server(), new(handler.User))
 
 	// Run service
 	if err := service.Run(); err != nil {

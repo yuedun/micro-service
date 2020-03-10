@@ -4,7 +4,7 @@ go语言微服务
 生成*.pb.go代码
 ```shell
 $ protoc protos/method.proto --go_out=plugins=grpc:.
-$ protoc --proto_path=. --micro_out=. --go_out=. proto/example/example.proto
+$ protoc --proto_path=. --micro_out=. --go_out=. proto/user/user.proto
 ```
 
 # Micro Service
