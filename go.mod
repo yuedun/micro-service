@@ -18,13 +18,12 @@ require (
 	github.com/hashicorp/vault v1.3.1 // indirect
 	github.com/hashicorp/yamux v0.0.0-20190923154419-df201c70410d // indirect
 	github.com/micro/go-log v0.1.0
-	github.com/micro/go-micro v1.18.0 // indirect
+	github.com/micro/go-micro v1.18.0
 	github.com/micro/go-micro/v2 v2.2.0
+	github.com/micro/micro/v2 v2.2.0 // indirect
 	github.com/micro/protoc-gen-micro/v2 v2.0.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
 	github.com/prometheus/client_golang v1.3.0 // indirect
-	github.com/russross/blackfriday v0.0.0-20170610170232-067529f716f4 // indirect
-	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/shirou/gopsutil v2.19.12+incompatible // indirect
 	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect

@@ -8,6 +8,7 @@ import (
 	userProto "micro-service/proto/user"
 )
 
+// 使用方式：将下面代码插入到web，api项目中来调用user.QueryUserByName服务
 func main() {
 	// Create a new service
 	service := micro.NewService(micro.Name("user.client"))
@@ -15,7 +16,7 @@ func main() {
 	service.Init()
 
 	// Create new user client
-	user := userProto.NewUserService("user", service.Client())
+	user := userProto.NewUserService("go.micro.srv.user", service.Client())
 
 	// Call the user
 	rsp, err := user.QueryUserByName(context.TODO(), &userProto.Request{UserName: "John"})
