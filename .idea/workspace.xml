@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bb36306-69cf-4965-af22-a5c67d5cc5b8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/api/api.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/handler/post.handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/handler/user.handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/post.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/post/post.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/post/post.pb.micro.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/post/post.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/user/user.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/user/user.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/user/user.pb.micro.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/user/user.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +40,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1W5qmQAGLjig7md0mg1SsJt6Sgo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -55,13 +60,17 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/handler" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace-go\src\micro-service\handler" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace-go\src\micro-service\api\handler" />
       <recent name="D:\workspace-go\src\micro-service\proto\user" />
     </key>
   </component>
@@ -81,6 +90,9 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>direct</proxy>
@@ -94,9 +106,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1583818600905" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584089897714">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584091844305">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1584089897714" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1584091844305" />
   </component>
 </project>
