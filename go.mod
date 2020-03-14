@@ -3,31 +3,26 @@ module micro-service
 go 1.13
 
 require (
-	github.com/DataDog/datadog-go v3.3.1+incompatible // indirect
-	github.com/coredns/coredns v1.6.6 // indirect
-	github.com/docker/docker v1.13.1 // indirect
-	github.com/envoyproxy/go-control-plane v0.9.1 // indirect
-	github.com/gogo/googleapis v1.3.1 // indirect
+	github.com/armon/go-metrics v0.3.0 // indirect
+	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32 // indirect
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/protobuf v1.3.4
-	github.com/hashicorp/consul v1.6.2 // indirect
-	github.com/hashicorp/go-discover v0.0.0-20200106195200-2f5d876fe697 // indirect
-	github.com/hashicorp/go-memdb v1.0.4 // indirect
-	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
-	github.com/hashicorp/raft-boltdb v0.0.0-20191021154308-4207f1bf0617 // indirect
-	github.com/hashicorp/vault v1.3.1 // indirect
-	github.com/hashicorp/yamux v0.0.0-20190923154419-df201c70410d // indirect
+	github.com/google/btree v1.0.0 // indirect
+	github.com/grpc-ecosystem/grpc-gateway v1.9.5 // indirect
+	github.com/hashicorp/go-immutable-radix v1.1.0 // indirect
+	github.com/hashicorp/go-msgpack v0.5.5 // indirect
+	github.com/hashicorp/go-rootcerts v1.0.1 // indirect
+	github.com/hashicorp/go-sockaddr v1.0.2 // indirect
+	github.com/hashicorp/go-uuid v1.0.2-0.20191001231223-f32f5fe8d6a8 // indirect
+	github.com/hashicorp/memberlist v0.1.5 // indirect
+	github.com/hashicorp/serf v0.8.5 // indirect
 	github.com/micro/go-log v0.1.0
 	github.com/micro/go-micro v1.18.0
 	github.com/micro/go-micro/v2 v2.2.0
-	github.com/micro/micro/v2 v2.2.0 // indirect
-	github.com/micro/protoc-gen-micro/v2 v2.0.0 // indirect
-	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
+	github.com/micro/go-plugins/registry/consul v0.0.0-20200119172437-4fe21aa238fd
+	github.com/onsi/ginkgo v1.8.0 // indirect
+	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/prometheus/client_golang v1.3.0 // indirect
-	github.com/shirou/gopsutil v2.19.12+incompatible // indirect
-	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
-	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
-	google.golang.org/grpc v1.27.1 // indirect
 )
 
 replace (

@@ -37,6 +37,8 @@ micro api --handler=api
 ```shell
 curl "http://localhost:8080/user/say/hello?name=huohuo"
 ```
+返回
+{"id":"123","password":"dslhgfoif40u9b9","username":"huohuo"}
 
 ### api层说明：
 API模块，它的身份其实就是一个网关或者代理层，它的能力就是让一个单一的入口可以去访问微服务。API工作在我们的软件服务架构的边缘。
