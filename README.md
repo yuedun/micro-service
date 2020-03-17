@@ -110,6 +110,20 @@ pause
 
 pause
 ```
+查看etcd节点状态
+```shell script
+./etcdctl.exe --write-out=table --endpoints=http://127.0.0.1:2379,http://127.0.0.1:3379,http://127.0.0.1:4379 endpoint status
+```
+```shell script
++-----------------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+|       ENDPOINT        |        ID        | VERSION | DB SIZE | IS LEADER | IS LEARNER | RAFT TERM | RAFT INDEX | RAFT APPLIED INDEX | ERRORS |
++-----------------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+| http://127.0.0.1:2379 | bf9071f4639c75cc |   3.4.4 |  115 kB |      true |      false |        13 |         99 |                 99 |        |
+| http://127.0.0.1:3379 | e7b968b9fb1bc003 |   3.4.4 |  115 kB |     false |      false |        13 |         99 |                 99 |        |
+| http://127.0.0.1:4379 | 19ac17627e3e396f |   3.4.4 |  106 kB |     false |      false |        13 |         99 |                 99 |        |
++-----------------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+
+```
 启动两个新的服务并注册到etcd中
 ```shell script
  go run main.go --registry=etcd --registry_address=http://127.0.0.1:3379
@@ -121,3 +135,32 @@ pause
 会在三个服务轮询接收请求
 ![](./etcd.jpg)
 停止某个服务并不会中断服务，以此实现了服务注册发现。
+
+## 线上部署
+在线上部署就不能使用`go run main.go`命令了，需要打包编译
+linux系统需要这样编译：`GOOS=linux go build -o service main.go`
+```shell script
+go build -o service main.go
+```
+```shell script
+go build -o api api/api.go
+```
+线上的restful api也不能使用`micro api`了。需要选择适合自己的web服务框架，在web服务中调用api服务。
+
+## etcd启动
+这个线上etcd和本地启动有讲究了，如果etcd是单独的服务器，那么在不加任何参数的情况下直接启动，那基本是调不通的。
+```shell script
+$ ./service --registry=etcd --registry_address=xx.xx.xx.xx:2379
+2020-03-17 17:04:42 Starting [service] go.micro.srv.user
+2020-03-17 17:04:42 Server [grpc] Listening on [::]:48493
+2020-03-17 17:04:42 Registry [etcd] Registering node: go.micro.srv.user-f32a2950-8e59-44d4-ac86-f4e1ec103395
+{"level":"warn","ts":"2020-03-17T17:04:47.849+0800","caller":"clientv3/retry_interceptor.go:61","msg":"retrying of unary invoker failed","target":"endpoint://client-e45decee-12bf-4a9b-a7ab-f92eece39420/xx.xx.xx.xx:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest connection error: connection error: desc = \"transport: Error while dialing dial tcp xx.xx.xx.xx:2379: connect: connection refused\""}
+2020-03-17 17:04:47 Server register error: %!(EXTRA context.deadlineExceededError=context deadline exceeded)
+```
+这就是错误示例。
+为了能顺利看到胜利的结果，需要这样启动etcd:
+```shell script
+$ ./etcd --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://0.0.0.0:2379 --listen-peer-urls http://0.0.0.0:2380 --initial-advertise-peer-urls http://0.0.0.0:2380  --initial-cluster my-etcd-1=http://0.0.0.0:2380
+```
+将ip为0.0.0.0可以理解为不限制连接机器（真正的生产不推荐这样设置）。
+服务启动参数`--registry_address=xx.xx.xx.xx:2379`不能带`http://`。
