@@ -20,13 +20,11 @@ func main() {
 
 	service.Server().Handle(
 		service.Server().NewHandler(
-			// 此处我要说一下，这个坑爹的指针类型没传对，搞了3天就是跑不通
 			&handler.Say{Client: user.NewUserService("go.micro.srv.user", service.Client())},
 		),
 	)
 	service.Server().Handle(
 		service.Server().NewHandler(
-			// 此处我要说一下，这个坑爹的指针类型没传对，搞了3天就是跑不通
 			&handler.Article{Client: post.NewPostService("go.micro.srv.user", service.Client())},
 		),
 	)

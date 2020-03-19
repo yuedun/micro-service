@@ -1,28 +1,32 @@
 module micro-service
 
-go 1.13
+go 1.14
 
 require (
-	github.com/armon/go-metrics v0.3.0 // indirect
+	github.com/coreos/etcd v3.3.19+incompatible // indirect
+	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
+	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32 // indirect
+	github.com/go-log/log v0.2.0 // indirect
 	github.com/gogo/protobuf v1.3.1 // indirect
-	github.com/golang/protobuf v1.3.4
+	github.com/golang/protobuf v1.3.5
 	github.com/google/btree v1.0.0 // indirect
-	github.com/grpc-ecosystem/grpc-gateway v1.9.5 // indirect
-	github.com/hashicorp/go-immutable-radix v1.1.0 // indirect
-	github.com/hashicorp/go-msgpack v0.5.5 // indirect
-	github.com/hashicorp/go-rootcerts v1.0.1 // indirect
-	github.com/hashicorp/go-sockaddr v1.0.2 // indirect
-	github.com/hashicorp/go-uuid v1.0.2-0.20191001231223-f32f5fe8d6a8 // indirect
-	github.com/hashicorp/memberlist v0.1.5 // indirect
-	github.com/hashicorp/serf v0.8.5 // indirect
+	github.com/kr/pretty v0.2.0 // indirect
+	github.com/lucas-clemente/quic-go v0.15.2 // indirect
 	github.com/micro/go-log v0.1.0
 	github.com/micro/go-micro v1.18.0
-	github.com/micro/go-micro/v2 v2.2.0
-	github.com/micro/go-plugins/registry/consul v0.0.0-20200119172437-4fe21aa238fd
-	github.com/onsi/ginkgo v1.8.0 // indirect
-	github.com/onsi/gomega v1.5.0 // indirect
-	github.com/prometheus/client_golang v1.3.0 // indirect
+	github.com/micro/go-micro/v2 v2.3.0
+	github.com/micro/go-plugins/registry/etcd v0.0.0-20200119172437-4fe21aa238fd
+	github.com/miekg/dns v1.1.29 // indirect
+	github.com/prometheus/client_golang v1.4.0 // indirect
+	go.uber.org/atomic v1.6.0 // indirect
+	go.uber.org/multierr v1.5.0 // indirect
+	go.uber.org/zap v1.14.1 // indirect
+	golang.org/x/crypto v0.0.0-20200317142112-1b76d66859c6 // indirect
+	golang.org/x/sys v0.0.0-20200317113312-5766fd39f98d // indirect
+	google.golang.org/genproto v0.0.0-20200319113533-08878b785e9c // indirect
+	google.golang.org/grpc v1.28.0 // indirect
+	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
 
 replace (
@@ -35,7 +39,7 @@ replace (
 	go.opencensus.io => github.com/census-instrumentation/opencensus-go v0.19.0
 	go.uber.org/multierr => github.com/uber-go/multierr v1.1.0
 	go.uber.org/zap => github.com/uber-go/zap v1.9.1
-	golang.org/x/crypto => github.com/golang/crypto v0.0.0-20200302210943-78000ba7a073
+	golang.org/x/crypto => github.com/golang/crypto v0.0.0-20200317142112-1b76d66859c6
 	golang.org/x/exp => github.com/golang/exp v0.0.0-20200228211341-fcea875c7e85
 	golang.org/x/image => github.com/golang/image v0.0.0-20200119044424-58c23975cae1
 	golang.org/x/lint => github.com/golang/lint v0.0.0-20200302205851-738671d3881b
@@ -44,7 +48,7 @@ replace (
 	golang.org/x/net => github.com/golang/net v0.0.0-20200301022130-244492dfa37a
 	golang.org/x/oauth2 => github.com/golang/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/sync => github.com/golang/sync v0.0.0-20190911185100-cd5d95a43a6e
-	golang.org/x/sys => github.com/golang/sys v0.0.0-20200302150141-5c8b2ff67527
+	golang.org/x/sys => github.com/golang/sys v0.0.0-20200317113312-5766fd39f98d
 	golang.org/x/text => github.com/golang/text v0.3.2
 	golang.org/x/time => github.com/golang/time v0.0.0-20191024005414-555d28b269f0
 	golang.org/x/tools => github.com/golang/tools v0.0.0-20200305224536-de023d59a5d1

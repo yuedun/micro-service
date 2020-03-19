@@ -148,7 +148,7 @@ go build -o api api/api.go
 线上的restful api也不能使用`micro api`了。需要选择适合自己的web服务框架，在web服务中调用api服务。
 
 ## etcd启动
-这个线上etcd和本地启动有讲究了，如果etcd是单独的服务器，那么在不加任何参数的情况下直接启动，那基本是调不通的。
+线上etcd和本地启动有讲究了，如果etcd是单独的服务器，那么在不加任何参数的情况下直接启动，那基本是调不通的。
 ```shell script
 $ ./service --registry=etcd --registry_address=xx.xx.xx.xx:2379
 2020-03-17 17:04:42 Starting [service] go.micro.srv.user
@@ -157,7 +157,7 @@ $ ./service --registry=etcd --registry_address=xx.xx.xx.xx:2379
 {"level":"warn","ts":"2020-03-17T17:04:47.849+0800","caller":"clientv3/retry_interceptor.go:61","msg":"retrying of unary invoker failed","target":"endpoint://client-e45decee-12bf-4a9b-a7ab-f92eece39420/xx.xx.xx.xx:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest connection error: connection error: desc = \"transport: Error while dialing dial tcp xx.xx.xx.xx:2379: connect: connection refused\""}
 2020-03-17 17:04:47 Server register error: %!(EXTRA context.deadlineExceededError=context deadline exceeded)
 ```
-这就是错误示例。
+这就是错误示例，etcd拒绝连接。
 为了能顺利看到胜利的结果，需要这样启动etcd:
 ```shell script
 $ ./etcd --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://0.0.0.0:2379 --listen-peer-urls http://0.0.0.0:2380 --initial-advertise-peer-urls http://0.0.0.0:2380  --initial-cluster my-etcd-1=http://0.0.0.0:2380
