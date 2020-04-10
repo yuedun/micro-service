@@ -16,7 +16,7 @@ v1.27.1会有类型这样的错误`undefined: resolver.BuildOption`,`undefined: 
 ```shell
 $ protoc --proto_path=. --micro_out=. --go_out=. proto/user/user.proto
 ```
-启动服务和测试
+### 测试client
 ```shell
 go run main.go
 ```
@@ -24,7 +24,7 @@ go run main.go
 go run client/main.go
 ```
 
-### 开启api服务
+### 测试api服务
 ```shell
 go run main.go
 ```

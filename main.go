@@ -3,19 +3,23 @@ package main
 import (
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro/v2"
-	// "github.com/micro/go-micro/v2/registry"
-	// "github.com/micro/go-micro/v2/registry/etcd"
+	//"github.com/micro/go-micro/v2/client/selector"
+	//"github.com/micro/go-micro/v2/registry"
+	//"github.com/micro/go-micro/v2/registry/etcd"
 	"micro-service/handler"
 	post "micro-service/proto/post"
 	user "micro-service/proto/user"
 )
 
 func main() {
-	// reg := etcd.NewRegistry(func(options *registry.Options) {
-	// 	options.Addrs = []string{
-	// 		"xx.xx.xx.xx:2379",
-	// 	}
-	// })
+	//reg := etcd.NewRegistry(func(options *registry.Options) {
+	//	options.Addrs = []string{
+	//		"xx.xx.xx.xx:2379",
+	//	}
+	//})
+	//micro.Selector(selector.NewSelector(func(options *selector.Options) {
+	//	options.Registry=reg
+	//}))
 	// New Service
 	service := micro.NewService(
 		// micro.Registry(reg),
