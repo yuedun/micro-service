@@ -154,7 +154,7 @@ go build -o api api/api.go
 ```
 至于线上的restful api可以选择适合自己的web服务框架，在web服务中调用api服务。也可以像本地一样启动
 ```shell
-micro --registry=etcd api --handler=api
+micro --registry=etcd --registry_address=xx.xx.xx.xx:2379 api --handler=api
 ```
 不过要在服务器上下载micro工具。
 ## etcd启动
