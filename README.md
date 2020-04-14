@@ -142,11 +142,21 @@ linux系统需要这样编译：`GOOS=linux go build -o service main.go`
 ```shell script
 go build -o service main.go
 ```
+```shell
+./service --registry=etcd --registry_address=xx.xx.xx.xx:2379
+```
+
 ```shell script
 go build -o api api/api.go
 ```
-线上的restful api也不能使用`micro api`了。需要选择适合自己的web服务框架，在web服务中调用api服务。
-
+```shell script
+./api --registry=etcd --registry_address=xx.xx.xx.xx:2379
+```
+至于线上的restful api可以选择适合自己的web服务框架，在web服务中调用api服务。也可以像本地一样启动
+```shell
+micro --registry=etcd api --handler=api
+```
+不过要在服务器上下载micro工具。
 ## etcd启动
 线上etcd和本地启动有讲究了，如果etcd是单独的服务器，那么在不加任何参数的情况下直接启动，那基本是调不通的。
 ```shell script
