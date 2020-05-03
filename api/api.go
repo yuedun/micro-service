@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/micro/go-micro/v2"
 	"log"
 	"micro-service/api/handler"
+
+	"github.com/micro/go-micro/v2"
 
 	post "micro-service/proto/post"
 	user "micro-service/proto/user"

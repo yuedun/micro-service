@@ -2,8 +2,9 @@ package handler
 
 import (
 	"context"
-	"github.com/micro/go-log"
 	"strconv"
+
+	"github.com/micro/go-log"
 
 	user "micro-service/proto/user"
 )

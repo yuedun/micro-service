@@ -4,8 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	micro "github.com/micro/go-micro/v2"
 	userProto "micro-service/proto/user"
+
+	micro "github.com/micro/go-micro/v2"
 )
 
 // 使用方式：将下面代码插入到web，api项目中来调用user.QueryUserByName服务

@@ -3,12 +3,13 @@ package handler
 import (
 	"context"
 	"encoding/json"
-	api "github.com/micro/go-micro/api/proto"
-	"github.com/micro/go-micro/errors"
 	"log"
 	user "micro-service/proto/user"
 	"strconv"
 	"strings"
+
+	api "github.com/micro/go-micro/api/proto"
+	"github.com/micro/go-micro/errors"
 )
 
 type Say struct {
