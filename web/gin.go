@@ -10,6 +10,7 @@ import (
 	micro "github.com/micro/go-micro/v2"
 )
 
+// 该模块演示的是在常规的web服务中调用微服务，比如在gin，beego，echo搭建的服务中调用微服务
 type Say struct{}
 
 var (
@@ -55,11 +56,4 @@ func main() {
 	router.GET("/greeter", say.Anything)
 	router.GET("/greeter/:name", say.Hello)
 	router.Run(":8081")
-	// Register Handler
-	//service.Handle("/", router)
-	//
-	//// Run server
-	//if err := service.Run(); err != nil {
-	//	log.Fatal(err)
-	//}
 }
