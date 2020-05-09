@@ -9,7 +9,7 @@ import (
 	micro "github.com/micro/go-micro/v2"
 )
 
-// 使用方式：将下面代码插入到web，api项目中来调用user.QueryUserByName服务
+// 使用方式：将下面代码插入到web，api项目中来调用user.QueryUserByName服务。可以参考web/gin.go。
 func main() {
 	// Create a new service
 	service := micro.NewService(micro.Name("user.client"))

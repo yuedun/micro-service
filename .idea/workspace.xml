@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bb36306-69cf-4965-af22-a5c67d5cc5b8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/web/gin2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/gin.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/gin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/handler/post.handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/post.handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/handler/user.handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/user.handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -18,6 +18,7 @@ type Article struct {
 	Client post.PostService
 }
 
+// http://localhost:8080/user/article/getArticle?id=1
 func (s *Article) GetArticle(ctx context.Context, req *api.Request, rsp *api.Response) error {
 	log.Print("Received Article.GetArticle API request")
 

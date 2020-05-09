@@ -6,6 +6,12 @@ go语言微服务
 - [教程](https://micro.mu/docs/helloworld.html)
 - [用户服务](https://github.com/micro-in-cn/tutorials/tree/master/microservice-in-micro/part1)
 
+
+## 项目目录说明
+目前的项目结构看起来像是一个独立的项目，实际真实的项目结构不是这样的，本项目为了简单使用而故意为之。
+实际情况是`micro-service`下的每一个目录都是一个独立的微服务，需要独立部署在不同的服务器上，每个服务都需要自己
+的`go.mod`,`proto`等文件和目录。
+
 ## 依赖
 
 grpc v1.25.1，

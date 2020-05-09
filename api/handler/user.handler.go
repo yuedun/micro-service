@@ -16,6 +16,7 @@ type Say struct {
 	Client user.UserService
 }
 
+//http://localhost:8080/user/say/hello?name=sdgfh
 func (s *Say) Hello(ctx context.Context, req *api.Request, rsp *api.Response) error {
 	log.Print("Received Say.Hello API request")
 
