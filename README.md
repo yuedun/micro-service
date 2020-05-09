@@ -3,7 +3,7 @@ go语言微服务
 
 ## Getting Started
 
-- [教程](https://micro.mu/docs/go-helloworld.html)
+- [教程](https://micro.mu/docs/helloworld.html)
 - [用户服务](https://github.com/micro-in-cn/tutorials/tree/master/microservice-in-micro/part1)
 
 ## 依赖
@@ -18,7 +18,7 @@ $ protoc --proto_path=. --micro_out=. --go_out=. proto/user/user.proto
 ```
 ### 测试client
 ```shell
-go run main.go
+go run service/main.go
 ```
 ```shell
 go run client/main.go
@@ -26,10 +26,10 @@ go run client/main.go
 
 ### 测试api服务
 ```shell
-go run main.go
+go run service/main.go
 ```
 ```shell
-go run api/api.go
+go run api/main.go
 ```
 ```shell
 micro api --handler=api
@@ -55,10 +55,10 @@ mDNS（多播DNS）是一种局域网内使用的DNS机制，他的大致原理�
 go-micro v2弃用了**consul**，推荐使用的是**etcd**。
 使用方法：
 ```shell
-go run main.go --registry=etcd
+go run service/main.go --registry=etcd
 ```
 ```shell
-go run api/api.go --registry=etcd
+go run api/main.go --registry=etcd
 ```
 ```shell
 micro --registry=etcd api --handler=api
@@ -126,10 +126,10 @@ pause
 ```
 启动两个新的服务并注册到etcd中
 ```shell script
- go run main.go --registry=etcd --registry_address=http://127.0.0.1:3379
+ go run service/main.go --registry=etcd --registry_address=http://127.0.0.1:3379
 ```
 ```shell script
- go run main.go --registry=etcd --registry_address=http://127.0.0.1:4379
+ go run service/main.go --registry=etcd --registry_address=http://127.0.0.1:4379
 ```
 多次请求http://localhost:8080/user/say/hello?name=huohuo
 会在三个服务轮询接收请求
@@ -137,22 +137,23 @@ pause
 停止某个服务并不会中断服务，以此实现了服务注册发现。
 
 ## 线上部署
-在线上部署就不能使用`go run main.go`命令了，需要打包编译
-linux系统需要这样编译：`GOOS=linux go build -o service main.go`
+在线上部署就不能使用`go run service/main.go`命令了，需要打包编译
+linux系统需要这样编译：`GOOS=linux go build -o service service/main.go`
 ```shell script
-go build -o service main.go
+go build -o service service/main.go
 ```
 ```shell
 ./service --registry=etcd --registry_address=xx.xx.xx.xx:2379
 ```
 
 ```shell script
-go build -o api api/api.go
+go build -o api api/main.go
 ```
 ```shell script
 ./api --registry=etcd --registry_address=xx.xx.xx.xx:2379
 ```
 至于线上的restful api可以选择适合自己的web服务框架，在web服务中调用api服务。也可以像本地一样启动
+[web中服务中调用api层](https://github.com/micro/examples/tree/master/greeter/api)
 ```shell
 micro --registry=etcd --registry_address=xx.xx.xx.xx:2379 api --handler=api
 ```

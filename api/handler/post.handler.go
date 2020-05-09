@@ -19,11 +19,11 @@ type Article struct {
 }
 
 func (s *Article) GetArticle(ctx context.Context, req *api.Request, rsp *api.Response) error {
-	log.Print("Received Say.Hello API request")
+	log.Print("Received Article.GetArticle API request")
 
 	ID, ok := req.Get["id"]
 	if !ok || len(ID.Values) == 0 {
-		return errors.BadRequest("go.micro.api.user", "Name cannot be blank")
+		return errors.BadRequest("go.micro.api.article", "id cannot be blank")
 	}
 
 	// 在restful api中调用rpc服务

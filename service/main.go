@@ -1,12 +1,15 @@
 package main
 
 import (
+	"micro-service/service/handler"
+
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro/v2"
+
 	//"github.com/micro/go-micro/v2/client/selector"
 	//"github.com/micro/go-micro/v2/registry"
 	//"github.com/micro/go-micro/v2/registry/etcd"
-	"micro-service/handler"
+
 	post "micro-service/proto/post"
 	user "micro-service/proto/user"
 )
