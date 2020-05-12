@@ -5,9 +5,10 @@ import (
 	"encoding/json"
 	post "micro-service/proto/post"
 
+	"github.com/micro/go-micro/v2/logger"
+
 	api "github.com/micro/go-micro/api/proto"
 
-	"log"
 	"strconv"
 	"strings"
 
@@ -20,7 +21,7 @@ type Article struct {
 
 // http://localhost:8080/user/article/getArticle?id=1
 func (s *Article) GetArticle(ctx context.Context, req *api.Request, rsp *api.Response) error {
-	log.Print("Received Article.GetArticle API request")
+	logger.Info("Received Article.GetArticle API request")
 
 	ID, ok := req.Get["id"]
 	if !ok || len(ID.Values) == 0 {

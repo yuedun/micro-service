@@ -2,7 +2,8 @@ package main
 
 import (
 	"context"
-	"log"
+
+	"github.com/micro/go-micro/v2/logger"
 
 	user "micro-service/proto/user"
 
@@ -18,14 +19,14 @@ var (
 )
 
 func (s *Say) Anything(c *gin.Context) {
-	log.Print("Received Say.Anything API request")
+	logger.Info("Received Say.Anything API request")
 	c.JSON(200, map[string]string{
 		"message": "Hi, this is the Greeter API",
 	})
 }
 
 func (s *Say) Hello(c *gin.Context) {
-	log.Print("Received Say.Hello API request")
+	logger.Info("Received Say.Hello API request")
 
 	name := c.Param("name")
 
@@ -34,7 +35,7 @@ func (s *Say) Hello(c *gin.Context) {
 	})
 
 	if err != nil {
-		log.Println(err)
+		logger.Error(err)
 		c.JSON(500, err)
 	}
 

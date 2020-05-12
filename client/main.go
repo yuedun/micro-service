@@ -2,7 +2,8 @@ package main
 
 import (
 	"context"
-	"fmt"
+
+	"github.com/micro/go-micro/v2/logger"
 
 	userProto "micro-service/proto/user"
 
@@ -22,9 +23,9 @@ func main() {
 	// Call the user
 	rsp, err := user.QueryUserByName(context.TODO(), &userProto.Request{UserName: "John"})
 	if err != nil {
-		fmt.Println(err)
+		logger.Fatal(err)
 	}
 
 	// Print response
-	fmt.Println(rsp.GetUser())
+	logger.Info(rsp.GetUser())
 }

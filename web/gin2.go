@@ -2,7 +2,8 @@ package main
 
 import (
 	"context"
-	"log"
+
+	"github.com/micro/go-micro/v2/logger"
 
 	user "micro-service/proto/user"
 
@@ -19,14 +20,14 @@ var (
 )
 
 func (s *Say2) Anything(c *gin.Context) {
-	log.Print("Received Say.Anything API request")
-	c.JSON(200, map[string]string{
+	logger.Info("Received Say.Anything API request")
+	c.JSON(200, gin.H{
 		"message": "Hi, this is the Greeter API",
 	})
 }
 
 func (s *Say2) Hello(c *gin.Context) {
-	log.Print("Received Say.Hello API request")
+	logger.Info("Received Say.Hello API request")
 
 	name := c.Param("name")
 
@@ -44,7 +45,7 @@ func (s *Say2) Hello(c *gin.Context) {
 func main() {
 	// Create service
 	service := web.NewService(
-		web.Name("go.micro.api.user"),
+		web.Name("web.gin"),
 	)
 
 	service.Init()
@@ -63,6 +64,6 @@ func main() {
 
 	// Run server
 	if err := service.Run(); err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
 }

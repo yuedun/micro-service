@@ -3,7 +3,8 @@ package main
 import (
 	"micro-service/service/handler"
 
-	"github.com/micro/go-log"
+	"github.com/micro/go-micro/v2/logger"
+
 	"github.com/micro/go-micro/v2"
 
 	//"github.com/micro/go-micro/v2/client/selector"
@@ -39,6 +40,6 @@ func main() {
 
 	// Run service
 	if err := service.Run(); err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
 }

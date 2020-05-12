@@ -181,3 +181,8 @@ $ ./etcd --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http:/
 ```
 将ip为0.0.0.0可以理解为不限制连接机器（真正的生产不推荐这样设置）。
 服务启动参数`--registry_address=xx.xx.xx.xx:2379`不能带`http://`。
+
+## 架构说明
+项目中推荐使用`github.com/micro/go-micro/v2/logger`作为日志插件，输出的格式如：
+2020-05-12 16:08:07  file=D:/workspace-go/src/micro-service/api/handler/user.handler.go:23 level=info Received Say.Hello API request
+包含了时间 文件：行数 日志等级 信息
