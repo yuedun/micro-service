@@ -1,0 +1,10 @@
+{
+    "WorkingDir": "D:\\workspace-go\\src\\micro-service\\api",
+    "SourceDir": [
+        "D:\\workspace-go\\src\\micro-service\\api"
+    ],
+    "SourceExt": [".go"],
+    "BuildCmd": "go build",
+    "RunCmd": "api.exe",
+    "Decreasing": 1
+}

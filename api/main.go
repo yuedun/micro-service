@@ -12,12 +12,14 @@ import (
 )
 
 // 将grpc服务转为restful接口
+// 微服务是多个独立的服务，api网关提供单个入口，整合微服务提供统一的api
 func main() {
 	service := micro.NewService(
+		// go.micro.api是默认命名空间，访问api需要带上user命名空间，如：/user/xx
+		// 如果不想使用默认命名空间可以在启动服务是设置
 		micro.Name("go.micro.api.user"),
 	)
 
-	// parse command line flags
 	service.Init()
 
 	service.Server().Handle(

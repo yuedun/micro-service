@@ -5,6 +5,7 @@ import (
 
 	"github.com/micro/go-micro/v2/logger"
 
+	postProto "micro-service/proto/post"
 	userProto "micro-service/proto/user"
 
 	micro "github.com/micro/go-micro/v2"
@@ -19,6 +20,7 @@ func main() {
 
 	// Create new user client
 	user := userProto.NewUserService("go.micro.srv.user", service.Client())
+	post := postProto.NewPostService("go.micro.srv.user", service.Client())
 
 	// Call the user
 	rsp, err := user.QueryUserByName(context.TODO(), &userProto.Request{UserName: "John"})
@@ -28,4 +30,11 @@ func main() {
 
 	// Print response
 	logger.Info(rsp.GetUser())
+
+	rsp2, err2 := post.QueryUserPosts(context.TODO(), &postProto.Request{UserID: 1})
+	if err2 != nil {
+		logger.Fatal(err2)
+	}
+	// Print response
+	logger.Info(rsp2.GetPost().Title)
 }

@@ -48,7 +48,9 @@ curl "http://localhost:8080/user/say/hello?name=huohuo"
 
 ### api层说明：
 API模块，它的身份其实就是一个网关或者代理层，它的能力就是让一个单一的入口可以去访问微服务。API工作在我们的软件服务架构的边缘。
+
 ![api作用](https://micro.mu/docs/images/api.png)
+
 ## 服务注册服务
 v2.0版本默认使用的服务注册发现是**mdns**。
 Micro内置了mDNS组播系统，这是一种零依赖的服务注册发现机制，它是区别于有注册中心的替代方案。
