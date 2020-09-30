@@ -3,8 +3,8 @@ go语言微服务
 
 ## Getting Started
 
-- [教程](https://micro.mu/docs/helloworld.html)
-- [用户服务](https://github.com/micro-in-cn/tutorials/tree/master/microservice-in-micro/part1)
+- [官方教程](https://github.com/micro/docs/tree/master/getting-started)
+- [示例教程](https://github.com/micro-in-cn/tutorials/tree/master/microservice-in-micro/part1)
 
 
 ## 项目目录说明
