@@ -5,14 +5,14 @@ import (
 	"encoding/json"
 	post "micro-service/proto/post"
 
-	"github.com/micro/go-micro/v2/logger"
+	"github.com/asim/go-micro/v3/logger"
 
-	api "github.com/micro/go-micro/api/proto"
+	api "github.com/asim/go-micro/v3/api/proto"
 
 	"strconv"
 	"strings"
 
-	"github.com/micro/go-micro/errors"
+	"github.com/asim/go-micro/v3/errors"
 )
 
 type Article struct {

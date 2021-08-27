@@ -1,28 +1,13 @@
 module micro-service
 
-go 1.14
+go 1.16
 
 require (
-	github.com/coreos/etcd v3.3.25+incompatible // indirect
-	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
-	github.com/dustin/go-humanize v1.0.0 // indirect
-	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32 // indirect
+	github.com/asim/go-micro/v3 v3.6.0
 	github.com/gin-gonic/gin v1.6.3
-	github.com/gogo/protobuf v1.3.1 // indirect
-	github.com/golang/protobuf v1.4.2
-	github.com/google/btree v1.0.0 // indirect
-	github.com/kr/pretty v0.2.1 // indirect
-	github.com/micro/go-micro v1.18.0
-	github.com/micro/go-micro/v2 v2.9.1
-	github.com/miekg/dns v1.1.31 // indirect
-	github.com/prometheus/client_golang v1.7.1 // indirect
-	go.uber.org/atomic v1.7.0 // indirect
-	go.uber.org/multierr v1.6.0 // indirect
-	go.uber.org/zap v1.16.0 // indirect
-	golang.org/x/net v0.0.0-20200927032502-5d4f70055728 // indirect
-	google.golang.org/genproto v0.0.0-20200929141702-51c3e5b607fe // indirect
-	google.golang.org/grpc v1.32.0 // indirect
+	github.com/golang/protobuf v1.5.2
+	github.com/json-iterator/go v1.1.10 // indirect
+	google.golang.org/protobuf v1.27.1
 )
 
 replace (
@@ -44,7 +29,7 @@ replace (
 	golang.org/x/net => github.com/golang/net v0.0.0-20200301022130-244492dfa37a
 	golang.org/x/oauth2 => github.com/golang/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/sync => github.com/golang/sync v0.0.0-20190911185100-cd5d95a43a6e
-	golang.org/x/sys => github.com/golang/sys v0.0.0-20200317113312-5766fd39f98d
+	golang.org/x/sys => github.com/golang/sys v0.0.0-20210823070655-63515b42dcdf
 	golang.org/x/text => github.com/golang/text v0.3.2
 	golang.org/x/time => github.com/golang/time v0.0.0-20191024005414-555d28b269f0
 	golang.org/x/tools => github.com/golang/tools v0.0.0-20200305224536-de023d59a5d1

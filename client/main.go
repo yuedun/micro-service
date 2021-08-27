@@ -3,12 +3,12 @@ package main
 import (
 	"context"
 
-	"github.com/micro/go-micro/v2/logger"
+	"github.com/asim/go-micro/v3/logger"
 
 	postProto "micro-service/proto/post"
 	userProto "micro-service/proto/user"
 
-	micro "github.com/micro/go-micro/v2"
+	micro "github.com/asim/go-micro/v3"
 )
 
 // 使用方式：将下面代码插入到web，api项目中来调用user.QueryUserByName服务。可以参考web/gin.go。

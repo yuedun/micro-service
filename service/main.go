@@ -3,13 +3,9 @@ package main
 import (
 	"micro-service/service/handler"
 
-	"github.com/micro/go-micro/v2/logger"
+	"github.com/asim/go-micro/v3/logger"
 
-	"github.com/micro/go-micro/v2"
-
-	//"github.com/micro/go-micro/v2/client/selector"
-	//"github.com/micro/go-micro/v2/registry"
-	//"github.com/micro/go-micro/v2/registry/etcd"
+	"github.com/asim/go-micro/v3"
 
 	post "micro-service/proto/post"
 	user "micro-service/proto/user"

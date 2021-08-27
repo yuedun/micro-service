@@ -14,13 +14,12 @@ go语言微服务
 
 ## 依赖
 
-grpc v1.25.1，
-v1.27.1会有类型这样的错误`undefined: resolver.BuildOption`,`undefined: resolver.ResolveNowOption`
-
+`go mod tidy`
 ## Usage
 生成*.pb.go代码
 ```shell
 $ protoc --proto_path=. --micro_out=. --go_out=. proto/user/user.proto
+$ protoc --proto_path=. --micro_out=. --go_out=. proto/post/post.proto
 ```
 ### 测试client
 ```shell

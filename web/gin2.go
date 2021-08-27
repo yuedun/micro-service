@@ -3,13 +3,13 @@ package main
 import (
 	"context"
 
-	"github.com/micro/go-micro/v2/logger"
+	"github.com/asim/go-micro/v3/logger"
 
 	user "micro-service/proto/user"
 
+	"github.com/asim/go-micro/v3/client"
+	"github.com/asim/go-micro/v3/web"
 	"github.com/gin-gonic/gin"
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/web"
 )
 
 // 该模块是作为微服务一部分来提供服务，和gin.go模块对比，该模块没有绑定端口，而是由框架来指定，会自动注册到服务发现中心，由micro api工具来发现并提供默认的8080端口

@@ -3,12 +3,12 @@ package main
 import (
 	"context"
 
-	"github.com/micro/go-micro/v2/logger"
+	"github.com/asim/go-micro/v3/logger"
 
 	user "micro-service/proto/user"
 
+	micro "github.com/asim/go-micro/v3"
 	"github.com/gin-gonic/gin"
-	micro "github.com/micro/go-micro/v2"
 )
 
 // 该模块演示的是在常规的web服务中调用微服务，比如在gin，beego，echo搭建的服务中调用微服务
@@ -42,7 +42,7 @@ func (s *Say) Hello(c *gin.Context) {
 	c.JSON(200, response)
 }
 
-func main() {
+func main1() {
 	// Create a new service
 	service := micro.NewService(micro.Name("web.gin"))
 	// Initialise the client and parse command line flags

@@ -4,14 +4,14 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/micro/go-micro/v2/logger"
+	"github.com/asim/go-micro/v3/logger"
 
 	user "micro-service/proto/user"
 	"strconv"
 	"strings"
 
-	api "github.com/micro/go-micro/api/proto"
-	"github.com/micro/go-micro/errors"
+	api "github.com/asim/go-micro/v3/api/proto"
+	"github.com/asim/go-micro/v3/errors"
 )
 
 type Say struct {
